@@ -10,55 +10,51 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
+import com.example.myapplication.model.Story;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.Holder> {
-    ArrayList<StoryAdapter> userImageAdapters;
+    ArrayList<Story> storyAdapters;
 
-    public StoryAdapter(ArrayList<StoryAdapter> storyAdapters) {
-        this.userImageAdapters = userImageAdapters;
+    public StoryAdapter(ArrayList<Story> storyAdapters) {
+        this.storyAdapters = storyAdapters;
     }
-
-    public StoryAdapter(int fireworks) {
-    }
-
 
     @NonNull
     @Override
     public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.testadopter, parent, false);
         Holder holder = new Holder(view);
-
         return holder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull StoryAdapter.Holder holder, int position) {
-        StoryAdapter userImageAdapter = userImageAdapters.get(position);
-        holder.userimage.setImageResource((int) userImageAdapter.getItemId(R.id.userimage));
+        Story story = storyAdapters.get(position);
+
+        holder.txtName.setText(story.getName());
 
         Picasso.get()
-                .load("https://images.app.goo.gl/A8BhAfnbMiLDYpep6")
-                .into();
-        Picasso.get().load("").into();
+                .load(story.getUserImage())
+                .into(holder.userImage);
 
     }
 
     @Override
     public int getItemCount() {
-        return userImageAdapters.size();
+        return storyAdapters.size();
     }
 
     class Holder extends RecyclerView.ViewHolder {
 
-        ImageView userimage;
+        ImageView userImage;
         TextView txtName;
 
         public Holder(@NonNull View itemView) {
             super(itemView);
-            userimage = itemView.findViewById(R.id.userimage);
+            userImage = itemView.findViewById(R.id.userImage);
             txtName =itemView.findViewById(R.id.txtName);
         }
     }

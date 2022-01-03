@@ -1,36 +1,27 @@
 package com.example.myapplication.model;
 
-import androidx.annotation.NonNull;
+public class Story {
+    private String name;
+    private String userImage;
 
-public class Story  {
-    private String txtName;
-    private int userimage;
-
-    public Story(String txtName, int userimage) {
-        this.txtName = txtName;
-        this.userimage = userimage;
+    public Story(String _name, String _image) {
+        this.name = _name;
+        this.userImage = _image;
     }
 
-    public String getTxtName() {
-        return txtName;
+    public String getName() {
+        return name;
     }
 
-    public void setTxtName(String txtName) {
-        this.txtName = txtName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getUserimage() {
-        return userimage;
+    public String getUserImage() {
+        return userImage;
     }
 
-    public void setUserimage(int userimage) {
-        this.userimage = userimage;
+    public void setUserImage(String userImage) {
+        this.userImage = userImage;
     }
-
-    public Story(String txtName, int userimage){
-        this.title = title;
-        this.price = price;
-        this.imageId = imageId;
-    }
-
 }
