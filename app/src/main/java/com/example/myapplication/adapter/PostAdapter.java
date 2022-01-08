@@ -41,6 +41,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.Holder> {
 
         holder.txtPostname.setText(post.getUserName());
 
+
         Picasso.get()
                 .load(post.getPostImage())
                 .into(holder.postImage);
