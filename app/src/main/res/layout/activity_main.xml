@@ -5,6 +5,12 @@
     android:layout_height="match_parent"
     android:layout_gravity="center"
     android:orientation="vertical">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -45,7 +51,7 @@
 
         <EditText
             android:id="@+id/txtsearch"
-            android:layout_width="900px"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40px"
             android:background="@drawable/botton"
@@ -56,40 +62,16 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerStories"
             android:layout_width="match_parent"
-            android:layout_height="200px"
-            android:layout_marginTop="40px"
-            android:background="@color/colorAccent" />
+            android:layout_height="300px"
+            android:layout_marginTop="40px" />
 
-        <!--        <androidx.cardview.widget.CardView-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="1100px"-->
-        <!--            android:layout_marginBottom="16dp"-->
-        <!--            app:cardElevation="5dp"-->
-        <!--            app:cardUseCompatPadding="true">-->
 
-        <!--            <LinearLayout-->
-        <!--                android:layout_width="match_parent"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:orientation="vertical">-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerPost"
+            android:layout_width="match_parent"
+            android:layout_height="800px"
+            android:layout_marginTop="40px" />
 
-        <!--            </LinearLayout>-->
-        <!--        </androidx.cardview.widget.CardView>-->
-
-        <!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-        <!--            android:id="@+id/takepic"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:background="@drawable/circlebotton"-->
-        <!--            android:src="@drawable/ic_camera_24" />-->
-
-        <!--        <com.google.android.material.bottomnavigation.BottomNavigationView-->
-        <!--            android:id="@+id/bottomNavigationView"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_gravity="end|bottom"-->
-        <!--            android:background="@color/colorAccent"-->
-        <!--            android:gravity="bottom|center"-->
-        <!--            app:menu="@menu/my_navigation_items" />-->
 
     </LinearLayout>
 
