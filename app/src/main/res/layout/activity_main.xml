@@ -4,8 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
+    android:background="#efefef"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
     android:orientation="vertical">
+
     <androidx.appcompat.widget.Toolbar
+        android:background="@color/colorPrimary"
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,6 +24,7 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -37,6 +43,7 @@
                 android:layout_marginLeft="10px"
                 android:layout_weight="6"
                 android:text="App"
+                android:textColor="@color/white"
                 android:textSize="70px" />
 
             <ImageView
@@ -50,10 +57,11 @@
         </LinearLayout>
 
         <EditText
+
             android:id="@+id/txtsearch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40px"
+            android:layout_marginTop="100px"
             android:background="@drawable/botton"
             android:gravity="center"
             android:hint="What's in your mind?" />
@@ -70,6 +78,7 @@
             android:id="@+id/recyclerPost"
             android:layout_width="match_parent"
             android:layout_height="800px"
+            android:background="#efefef"
             android:layout_marginTop="40px" />
 
 
