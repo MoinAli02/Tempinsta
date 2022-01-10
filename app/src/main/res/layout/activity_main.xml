@@ -10,10 +10,10 @@
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
-        android:background="@color/colorPrimary"
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme" />
 
@@ -24,9 +24,9 @@
         android:orientation="vertical">
 
         <LinearLayout
-            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:orientation="horizontal"
             android:padding="10px">
 
@@ -67,20 +67,33 @@
             android:hint="What's in your mind?" />
 
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerStories"
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="300px"
-            android:layout_marginTop="40px" />
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerStories"
+                    android:layout_width="match_parent"
+                    android:layout_height="300px"
+                    android:layout_marginTop="40px"
+                    android:nestedScrollingEnabled="false" />
 
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerPost"
-            android:layout_width="match_parent"
-            android:layout_height="800px"
-            android:background="#efefef"
-            android:layout_marginTop="40px" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerPost"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40px"
+                    android:background="#efefef"
+                     />
+            </LinearLayout>
 
+        </androidx.core.widget.NestedScrollView>
 
     </LinearLayout>
 

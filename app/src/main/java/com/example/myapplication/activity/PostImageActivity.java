@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.example.myapplication.R;
 
-public class PostimageActivity extends AppCompatActivity {
+public class PostImageActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
