@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        toolbar=findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
 
         showStory();
@@ -47,23 +47,21 @@ public class MainActivity extends AppCompatActivity {
     void showPost() {
         recyclerPost = findViewById(R.id.recyclerPost);
         ArrayList<Post> posts = new ArrayList<>();
-        posts.add(new Post("Ali", "https://www.gstatic.com/webp/gallery/1.webp", "https://www.gstatic.com/webp/gallery/1.webp", "New"));
-        posts.add(new Post("Ali", "https://www.gstatic.com/webp/gallery/2.webp", "https://www.gstatic.com/webp/gallery/2.webp", "New"));
-        posts.add(new Post("Ali", "https://www.gstatic.com/webp/gallery/3.webp", "https://www.gstatic.com/webp/gallery/3.webp", "New"));
-        posts.add(new Post("Ali", "https://www.gstatic.com/webp/gallery/4.webp", "https://www.gstatic.com/webp/gallery/4.webp", "New"));
-        posts.add(new Post("Ali", "https://www.gstatic.com/webp/gallery/5.webp", "https://www.gstatic.com/webp/gallery/5.webp", "New"));
-        posts.add(new Post("Ali", "https://www.gstatic.com/webp/gallery/1.webp", "https://www.gstatic.com/webp/gallery/1.webp", "New"));
-        posts.add(new Post("Ali", "https://www.gstatic.com/webp/gallery/2.webp", "https://www.gstatic.com/webp/gallery/2.webp", "New"));
-        posts.add(new Post("Ali", "https://www.gstatic.com/webp/gallery/3.webp", "https://www.gstatic.com/webp/gallery/3.webp", "New"));
-        posts.add(new Post("Ali", "https://www.gstatic.com/webp/gallery/4.webp", "https://www.gstatic.com/webp/gallery/4.webp", "New"));
-        posts.add(new Post("Ali", "https://www.gstatic.com/webp/gallery/5.webp", "https://www.gstatic.com/webp/gallery/5.webp", "New"));
+        posts.add(new Post("Ali", "https://www.gstatic.com/webp/gallery/1.webp", "https://www.gstatic.com/webp/gallery/1.webp", "New", false));
+        posts.add(new Post("Ali", "https://www.gstatic.com/webp/gallery/2.webp", "https://www.gstatic.com/webp/gallery/2.webp", "New", true));
+        posts.add(new Post("Ali", "https://www.gstatic.com/webp/gallery/3.webp", "https://www.gstatic.com/webp/gallery/3.webp", "New", false));
+        posts.add(new Post("Ali", "https://www.gstatic.com/webp/gallery/4.webp", "https://www.gstatic.com/webp/gallery/4.webp", "New", false));
+        posts.add(new Post("Ali", "https://www.gstatic.com/webp/gallery/5.webp", "https://www.gstatic.com/webp/gallery/5.webp", "New", false));
+        posts.add(new Post("Ali", "https://www.gstatic.com/webp/gallery/1.webp", "https://www.gstatic.com/webp/gallery/1.webp", "New", true));
+        posts.add(new Post("Ali", "https://www.gstatic.com/webp/gallery/2.webp", "https://www.gstatic.com/webp/gallery/2.webp", "New", true));
+        posts.add(new Post("Ali", "https://www.gstatic.com/webp/gallery/3.webp", "https://www.gstatic.com/webp/gallery/3.webp", "New", true));
+        posts.add(new Post("Ali", "https://www.gstatic.com/webp/gallery/4.webp", "https://www.gstatic.com/webp/gallery/4.webp", "New", false));
+        posts.add(new Post("Ali", "https://www.gstatic.com/webp/gallery/5.webp", "https://www.gstatic.com/webp/gallery/5.webp", "New", true));
 
-        PostAdapter adapter = new PostAdapter(posts);
+        PostAdapter adapter = new PostAdapter(posts, getApplicationContext());
         recyclerPost.setAdapter(adapter);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext(), RecyclerView.VERTICAL, false);
         recyclerPost.setLayoutManager(layoutManager);
-
-
 
 
     }
