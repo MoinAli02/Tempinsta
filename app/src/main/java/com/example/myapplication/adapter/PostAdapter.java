@@ -12,14 +12,13 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.R;
-import com.example.myapplication.activity.Comments_Activity;
-import com.example.myapplication.activity.MainActivity;
-import com.example.myapplication.activity.PostimageActivity;
-import com.example.myapplication.activity.ProfileActivity;
+import com.example.myapplication.activity.PostImageActivity;
 import com.example.myapplication.model.Post;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+
+import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.Holder> {
     ArrayList<Post> posts;
@@ -49,18 +48,11 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.Holder> {
         holder.postImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final Intent intent = new Intent(context, PostimageActivity.class);
+                final Intent intent = new Intent(context, PostImageActivity.class);
                 intent.putExtra("image", post.getPostImage());
+                intent.setFlags(FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
 
-                holder.imgComment.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent1=new Intent(context, Comments_Activity.class);
-                        intent.putExtra("image", post.getImgComment());
-                        context.startActivity(intent1);
-                    }
-                }) ;
 
             }
         });
@@ -75,22 +67,42 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.Holder> {
                     post.setLike(true);
                     holder.imgLike.setImageResource(R.drawable.ic_baseline_favorite_24);
                 }
-// Update post list after every change
+                // Update post list after every change
                 posts.set(position, post);
             }
-
-
         });
 
+        holder.imgComment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, PostImageActivity.class);
+                intent.putExtra("image", post.getImgComment());
+                intent.setFlags(FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+            }
+        });
+
+        holder.imgShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
+                sendIntent.setType("text/plain");
+
+                Intent shareIntent = Intent.createChooser(sendIntent, null);
+                shareIntent.setFlags(FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(shareIntent);
+            }
+        });
         Picasso.get()
                 .load(post.getPostImage())
                 .into(holder.postImage);
         Picasso.get()
                 .load(post.getPostImage())
                 .into(holder.imageIcon);
-//        Picasso.get()
-//                .load(post.getPostImage())
-//                .into(holder.postImage1);
+
     }
 
 
@@ -101,7 +113,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.Holder> {
 
     class Holder extends RecyclerView.ViewHolder {
 
-        ImageView imageIcon, postImage, imgLike, imgShare, imgComment,postImage1;
+        ImageView imageIcon, postImage, imgLike, imgShare, imgComment, postImage1;
         TextView txtPostname;
 
         public Holder(@NonNull View itemView) {
@@ -113,7 +125,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.Holder> {
             imgLike = itemView.findViewById(R.id.imgLike);
             imgShare = itemView.findViewById(R.id.imgShare);
             txtPostname = itemView.findViewById(R.id.txtPostname);
-            postImage1= itemView.findViewById(R.id.postImage1);
+            postImage1 = itemView.findViewById(R.id.postImage1);
         }
     }
 

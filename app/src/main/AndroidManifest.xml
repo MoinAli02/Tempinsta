@@ -19,8 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.Comments_Activity"></activity>
-        <activity android:name=".activity.PostimageActivity" />
+        <activity android:name=".activity.CommentsActivity"></activity>
+        <activity android:name=".activity.PostImageActivity" />
         <activity android:name=".activity.ProfileActivity" />
         <activity
             android:name=".activity.MainActivity"
