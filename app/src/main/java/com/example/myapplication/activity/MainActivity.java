@@ -11,11 +11,14 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.myapplication.R;
+import com.example.myapplication.adapter.CommentAdapter;
 import com.example.myapplication.adapter.PostAdapter;
 import com.example.myapplication.adapter.StoryAdapter;
+import com.example.myapplication.model.Comments;
 import com.example.myapplication.model.Post;
 import com.example.myapplication.model.Story;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -30,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerStories;
     private RecyclerView recyclerPost;
     private Toolbar toolbar;
+    private RecyclerView commentRecycler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         showStory();
         showPost();
+        showComments();
     }
 
 
@@ -93,5 +98,24 @@ public class MainActivity extends AppCompatActivity {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext(), RecyclerView.HORIZONTAL, false);
         recyclerStories.setLayoutManager(layoutManager);
     }
+
+
+
+
+
+    void showComments(){
+        commentRecycler=findViewById(R.id.commentRecycler);
+        ArrayList<Comments>comments= new ArrayList<>();
+        comments.add("moin", "hello", "10");
+
+
+        CommentAdapter commentAdapter=new CommentAdapter(comments);
+        commentRecycler.setAdapter(commentAdapter);
+
+        LinearLayoutManager layoutManager=new LinearLayoutManager(getApplicationContext(), RecyclerView.VERTICAL, false);
+        commentRecycler.setLayoutManager(layoutManager);
+    }
+
+
 
 }

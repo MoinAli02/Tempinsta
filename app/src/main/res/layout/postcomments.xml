@@ -4,32 +4,6 @@
     android:layout_height="match_parent"
     android:padding="30px"
     android:orientation="vertical">
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="80px"
-            android:layout_height="80px"
-            android:src="@drawable/fireworks"/>
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_marginLeft="30px"
-                android:text="@string/text1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:layout_marginLeft="70px"
-                android:text="15 min ago"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="3px"/>
-    </LinearLayout>
 
     <LinearLayout
         android:layout_marginTop="30px"
@@ -37,6 +11,7 @@
         android:layout_height="wrap_content">
 
         <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/commentImage"
             android:layout_width="120px"
             android:layout_height="120px"
             android:src="@drawable/fireworks" />
@@ -51,6 +26,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:id="@+id/commentName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="80px"
@@ -58,6 +34,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/commentText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="30px"
@@ -71,23 +48,27 @@
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:id="@+id/commentTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="180px"
                     android:text="6 min" />
 
                 <TextView
+                    android:id="@+id/commentLikes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="80px"
                     android:text="6 Likes" />
 
                 <TextView
+                    android:id="@+id/commentReply"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="80px"
                     android:text="Reply" />
                 <ImageView
+                    android:id="@+id/commentLike"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="400px"
@@ -100,71 +81,5 @@
         android:layout_width="wrap_content"
         android:layout_height="3px"/>
 
-    <LinearLayout
-        android:layout_marginTop="30px"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:layout_width="120px"
-            android:layout_height="120px"
-            android:src="@drawable/fireworks" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="80px"
-                    android:text="Name :"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30px"
-                    android:text="@string/comment2" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="180px"
-                    android:text="20 min" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="80px"
-                    android:text="25 Likes" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="80px"
-                    android:text="Reply" />
-                <ImageView
-                    android:layout_marginLeft="350px"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_baseline_favorite_24" />
-            </LinearLayout>
-
-        </LinearLayout>
-    </LinearLayout>
 
 </LinearLayout>
